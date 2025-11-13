@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wemender GJU · Jegyvásárlás</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- QR code library for ticket confirmation view -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="logo">Wemender <span>GJU</span></div>
+      <nav class="nav">
+        <a href="#tickets">Jegyek</a>
+        <a href="#tables">Asztalfoglalás</a>
+        <a href="#event">Esemény</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="event">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Wemender GJU 2025</h1>
+          <p class="hero-sub">
+            Exkluzív rendezvény · 2025. december 29. · Névreszóló jegyek, QR-kódos beléptetés.
+          </p>
+          <ul class="hero-list">
+            <li>Névreszóló jegyek – minden belépőhöz név szükséges</li>
+            <li>Online asztalfoglalás</li>
+            <li>QR-kódos jegyellenőrzés a helyszínen</li>
+          </ul>
+          <a href="#tickets" class="btn-primary">Jegyvásárlás</a>
+        </div>
+        <div class="hero-card">
+          <h2>Esemény információk</h2>
+          <p><strong>Dátum:</strong> 2025.12.29.</p>
+          <p><strong>Szervező:</strong> Wemender GJU</p>
+          <p><strong>Helyszín:</strong> Hamarosan...</p>
+          <p class="hero-note">Foglalj jegyet és asztalt online, hogy biztosan legyen helyed!</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="tickets" class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h2>Jegyvásárlás</h2>
+          <form id="ticket-form" class="form">
+            <label>
+              Teljes név*
+              <input type="text" name="name" required placeholder="Vezetéknév Keresztnév" />
+            </label>
+            <label>
+              E-mail cím*
+              <input type="email" name="email" required placeholder="te@pelda.hu" />
+            </label>
+            <label>
+              Jegytípus*
+              <select name="ticket_type" required>
+                <option value="normal">Normál jegy – 5000 Ft</option>
+                <option value="vip">Jegy + vacsora – 9000 Ft</option>
+              </select>
+            </label>
+            <label>
+              Jegyek száma*
+              <input type="number" name="quantity" min="1" value="1" required />
+            </label>
+            <button type="submit" class="btn-primary full-width">Jegyek foglalása</button>
+            <p class="small">
+              A fizetés jelenleg helyszínen történik. A foglalásról visszaigazoló e-mailt küldünk.
+            </p>
+            <div id="ticket-error" class="form-error"></div>
+          </form>
+        </div>
+
+        <div class="card" id="ticket-result-card" style="display:none;">
+          <h2>Jegyed adatai</h2>
+          <div id="ticket-summary"></div>
+          <div id="qrcode" class="qrcode"></div>
+          <p class="small">
+            A fenti QR-kódot mutasd be belépéskor. A QR a jegyed egyedi azonosítóját tartalmazza,
+            amit a helyszínen ellenőrzünk.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="tables" class="section section-alt">
+      <div class="container grid-2">
+        <div class="card">
+          <h2>Asztalfoglalás</h2>
+          <form id="reservation-form" class="form">
+            <label>
+              Kapcsolattartó név*
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              E-mail cím*
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              Telefonszám
+              <input type="tel" name="phone" />
+            </label>
+            <label>
+              Létszám*
+              <input type="number" name="guests" min="1" value="4" required />
+            </label>
+            <label>
+              Megjegyzés
+              <textarea name="notes" rows="3" placeholder="Pl. külön kérés, allergia, stb."></textarea>
+            </label>
+            <button type="submit" class="btn-outline full-width">Asztal foglalása</button>
+            <div id="reservation-error" class="form-error"></div>
+            <div id="reservation-success" class="form-success"></div>
+          </form>
+        </div>
+
+        <div class="card">
+          <h2>Miért érdemes előre foglalni?</h2>
+          <ul class="hero-list">
+            <li>Biztos helyet kapsz a barátaiddal egy asztalnál</li>
+            <li>Gyorsabb beléptetés a helyszínen</li>
+            <li>Jegy + vacsora opcióval prémium asztalokat foglalhatsz</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© 2025 Wemender GJU · Minden jog fenntartva.</div>
+      <div class="footer-links">
+        <a href="/admin" target="_blank">Admin felület</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

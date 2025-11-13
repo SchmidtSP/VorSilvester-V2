@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin · Wemender GJU Jegyek</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="admin-body">
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="logo">Admin · <span>Wemender GJU</span></div>
+      <nav class="nav">
+        <a href="#tickets">Jegyek</a>
+        <a href="#reservations">Asztalfoglalások</a>
+        <a href="#verify">QR ellenőrzés</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container admin-grid">
+      <section id="tickets" class="card">
+        <h2>Jegyrendelések</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Név</th>
+                <th>Email</th>
+                <th>Típus</th>
+                <th>Darab</th>
+                <th>Összeg (Ft)</th>
+                <th>Kód</th>
+                <th>Dátum</th>
+              </tr>
+            </thead>
+            <tbody id="tickets-body">
+              <tr><td colspan="8">Betöltés...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="reservations" class="card">
+        <h2>Asztalfoglalások</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Név</th>
+                <th>Email</th>
+                <th>Telefon</th>
+                <th>Fő</th>
+                <th>Megjegyzés</th>
+                <th>Dátum</th>
+              </tr>
+            </thead>
+            <tbody id="reservations-body">
+              <tr><td colspan="7">Betöltés...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="verify" class="card">
+        <h2>Jegy ellenőrzése kóddal</h2>
+        <form id="verify-form" class="form-inline">
+          <input type="text" id="verify-code" placeholder="Jegy kódja (pl. a QR tartalma)" />
+          <button type="submit" class="btn-primary">Ellenőrzés</button>
+        </form>
+        <div id="verify-result"></div>
+        <p class="small">
+          Tipp: a QR-kód a <code>/verify/&lt;kód&gt;</code> URL-t tartalmazza. Ha telefonról
+          nyitod meg, egyből látod, hogy érvényes-e a jegy.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>Admin felület · Wemender GJU</div>
+    </div>
+  </footer>
+
+  <script src="admin.js"></script>
+</body>
+</html>

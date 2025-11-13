@@ -1,0 +1,13 @@
+{
+  "name": "wemender-gju-ticket-site",
+  "version": "1.0.0",
+  "description": "Egyszerű jegyvásárlási és asztalfoglalási weboldal admin felülettel és QR-kódos ellenőrzéssel.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "sqlite3": "^5.1.7"
+  }
+}
